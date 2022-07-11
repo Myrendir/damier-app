@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="129.283" height="92.188" viewBox="0 0 129.283 92.188">
+  <defs>
+    <filter id="Icon_awesome-ticket-alt" x="0" y="0" width="129.283" height="92.188" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Icon_awesome-ticket-alt)">
+    <path id="Icon_awesome-ticket-alt-2" data-name="Icon awesome-ticket-alt" d="M24.729,23.047H86.553V60.141H24.729Zm77.28,18.547a9.273,9.273,0,0,0,9.274,9.274V69.415a9.273,9.273,0,0,1-9.274,9.274H9.274A9.273,9.273,0,0,1,0,69.415V50.868a9.273,9.273,0,0,0,9.274-9.274A9.273,9.273,0,0,0,0,32.321V13.774A9.273,9.273,0,0,1,9.274,4.5h92.735a9.273,9.273,0,0,1,9.274,9.274V32.321A9.273,9.273,0,0,0,102.009,41.594ZM92.735,21.5A4.637,4.637,0,0,0,88.1,16.865H23.184A4.637,4.637,0,0,0,18.547,21.5V61.687a4.637,4.637,0,0,0,4.637,4.637H88.1a4.637,4.637,0,0,0,4.637-4.637Z" transform="translate(9 1.5)" fill="#3a56a3"/>
+  </g>
+</svg>
