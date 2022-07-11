@@ -4,11 +4,10 @@ import Sidebar from "./components/layouts/Sidebar/Sidebar";
 import Home from "./components/Home";
 
 function App() {
-    const color = 'grey';
     return (
         <div className="App" style={styles.row}>
             <Home/>
-            <Sidebar color={color}/>
+            <Sidebar/>
         </div>
     );
 }
