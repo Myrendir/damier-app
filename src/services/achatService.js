@@ -1,7 +1,7 @@
 import axios from "axios";
 import {ACHAT} from "../config/constantURL";
 
-export default async function get_achat() {
+export default async function get_achat(startDate, endDate) {
     try {
         const response = await axios({
             headers: {
@@ -10,7 +10,8 @@ export default async function get_achat() {
             method: 'get',
             url: ACHAT,
             params: {
-                startDate: '2021-06-01'
+                startDate: startDate,
+                endDate: endDate
             }
         });
 
