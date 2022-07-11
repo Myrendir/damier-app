@@ -37,7 +37,7 @@ function a11yProps(index) {
     };
 }
 
-export default function Navbar() {
+export default function Sidebar() {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -56,9 +56,11 @@ export default function Navbar() {
                 sx={{borderRight: 1, borderColor: 'divider'}}
             >
                 <Tab label="Recettes" {...a11yProps(0)} />
+                <input type={"date"}/>
             </Tabs>
             <TabPanel value={value} index={0} style={{width: '100%'}}>
             </TabPanel>
+
         </Box>
     )
 }
