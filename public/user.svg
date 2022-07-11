@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="102.921" height="108.743" viewBox="0 0 102.921 108.743">
+  <defs>
+    <filter id="Icon_awesome-user-alt" x="0" y="0" width="102.921" height="108.743" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Icon_awesome-user-alt)">
+    <path id="Icon_awesome-user-alt-2" data-name="Icon awesome-user-alt" d="M42.461,51.043c13.186,0,23.884-11.432,23.884-25.522S55.647,0,42.461,0,18.576,11.432,18.576,25.522,29.275,51.043,42.461,51.043Zm21.23,5.671H54.552a27.2,27.2,0,0,1-24.183,0H21.23C9.5,56.715,0,66.87,0,79.4v2.836a8.25,8.25,0,0,0,7.961,8.507h69a8.25,8.25,0,0,0,7.961-8.507V79.4C84.921,66.87,75.417,56.715,63.691,56.715Z" transform="translate(9 6)" fill="#dab6c2"/>
+  </g>
+</svg>
