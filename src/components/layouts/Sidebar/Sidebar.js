@@ -1,66 +1,35 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
+import {Switch} from "@mui/material";
+import {useStore} from "react-context-hook";
 
-function TabPanel(props) {
-    const {children, value, index, ...other} = props;
+export default function Sidebar(props) {
+    const [date, setDate] = useStore("date", "");
+    const [isVue2D, setIsVue2D] = useStore("isVue2D", 0);
 
     return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`vertical-tabpanel-${index}`}
-            aria-labelledby={`vertical-tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box sx={{p: 3}}>
-                    <div>{children}</div>
-                </Box>
-            )}
+        <div style={{
+            width: "200px",
+            height: "100vh",
+            position: "fixed",
+            backgroundColor: props.color,
+            justifyContent: "center",
+        }}>
+            <div style={{paddingTop: "20px"}}>
+                <p>Bonjour Toto</p>
+            </div>
+            <div style={{paddingTop: '5vh'}}>
+                <input
+                    type={"date"}
+                    onChange={e => setDate(e.target.value)}
+                />
+            </div>
+            <div style={{paddingTop: '60vh'}}>
+                <p style={{fontSize: '12px'}}>2D / 3D</p>
+                <Switch
+                    color="primary"
+                    onChange={e => setIsVue2D(e.target.value)}
+                />
+            </div>
         </div>
-    );
-}
-
-TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-    return {
-        id: `vertical-tab-${index}`,
-        'aria-controls': `vertical-tabpanel-${index}`,
-    };
-}
-
-export default function Sidebar() {
-    const [value, setValue] = React.useState(0);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
-    return (
-        <Box
-            sx={{flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: '100%'}}
-        >
-            <Tabs
-                orientation="vertical"
-                variant="scrollable"
-                value={value}
-                onChange={handleChange}
-                sx={{borderRight: 1, borderColor: 'divider'}}
-            >
-                <Tab label="Recettes" {...a11yProps(0)} />
-                <input type={"date"}/>
-            </Tabs>
-            <TabPanel value={value} index={0} style={{width: '100%'}}>
-            </TabPanel>
-
-        </Box>
     )
 }

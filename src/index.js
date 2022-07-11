@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { withStore } from "react-context-hook"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const initialValue = {
+    date: 0,
+    isVue2d: 0,
+};
+const AppWithStore = withStore(App, initialValue);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <AppWithStore />
 );
 
 // If you want to start measuring performance in your app, pass a function

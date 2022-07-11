@@ -7,6 +7,8 @@ function App() {
     return (
         <div style={styles.row}>
             <Home/>
+        <div className="App">
+            <Sidebar color={color}/>
         </div>
     );
 }
