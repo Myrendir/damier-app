@@ -1,7 +1,7 @@
 import axios from "axios";
 import {COMMERCIAL} from "../config/constantURL";
 
-export default async function get_commercial() {
+export default async function get_commercial(startDate, endDate) {
     try {
         const response = await axios({
             headers: {
@@ -10,7 +10,8 @@ export default async function get_commercial() {
             method: 'get',
             url: COMMERCIAL,
             params: {
-                startDate: '2021-06-01'
+                startDate: startDate,
+                endDate: endDate
             }
         });
 

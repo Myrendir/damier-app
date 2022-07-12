@@ -1,7 +1,11 @@
 import React from 'react';
 import Square from "./square";
+import {useStore} from "react-context-hook";
+
 
 export default function Home() {
+    const [date] = useStore("date");
+
     return (
         <div style={styles.columns}>
             <div style={styles.row}>

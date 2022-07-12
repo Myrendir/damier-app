@@ -1,7 +1,7 @@
 import axios from "axios";
 import {TECHNICAL} from "../config/constantURL";
 
-export default async function get_technical() {
+export default async function get_technical(startDate, endDate) {
     try {
         const response = await axios({
             headers: {
@@ -10,7 +10,8 @@ export default async function get_technical() {
             method: 'get',
             url: TECHNICAL,
             params: {
-                startDate: '2021-06-01'
+                startDate: startDate,
+                endDate: endDate
             }
         });
 
