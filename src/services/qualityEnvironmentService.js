@@ -1,7 +1,7 @@
 import axios from "axios";
 import {QUALITY_ENVIRONMENT} from "../config/constantURL";
 
-export default async function get_quality_environment(startDate, endDate) {
+export default async function get_quality_environment(endDate) {
     try {
         const response = await axios({
             headers: {
@@ -10,12 +10,11 @@ export default async function get_quality_environment(startDate, endDate) {
             method: 'get',
             url: QUALITY_ENVIRONMENT,
             params: {
-                startDate: startDate,
                 endDate: endDate
             }
         });
 
-        return response.data.data[0];
+        return response.data;
     } catch (error) {
         console.error(error);
     }
