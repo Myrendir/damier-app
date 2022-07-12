@@ -1,13 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import Sidebar from "./components/layouts/Sidebar/Sidebar";
 import Home from "./components/Home";
+import {useStore} from "react-context-hook";
 
 function App() {
     return (
         <div className="App" style={styles.row}>
-            <Home/>
             <Sidebar/>
+            <Home/>
         </div>
     );
 }
@@ -15,7 +15,7 @@ function App() {
 export default App;
 
 const styles = {
-    row : {
+    row: {
         display: "flex",
         flexDirection: "row",
         height: "100vh",
