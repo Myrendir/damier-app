@@ -7,6 +7,7 @@ import get_human_ressources from "../services/humanRessourcesService";
 import get_technical from "../services/technicalService";
 import get_environnement from "../services/qualityEnvironmentService";
 import Square from "./Square";
+import {Link} from "react-router-dom";
 
 
 export default function Home() {
@@ -60,13 +61,13 @@ export default function Home() {
                     let tauxAbstent = 0;
                     data.data.forEach(item => {
                         if (item.tauxAbsenteisme != undefined) {
-                            nbTaux ++;
+                            nbTaux++;
                             tauxAbstent += item.tauxAbsenteisme;
                         }
                     });
                     setTauxAbsenteisme(tauxAbstent / nbTaux);
                 });
-            }else {
+            } else {
                 get_achat().then(data => {
                     let nbTotalVenduinside = 0;
                     data.data.forEach(item => {
@@ -98,7 +99,7 @@ export default function Home() {
                     let tauxAbstent = 0;
                     data.data.forEach(item => {
                         if (item.tauxAbsenteisme != undefined) {
-                            nbTaux ++;
+                            nbTaux++;
                             tauxAbstent += item.tauxAbsenteisme;
                         }
                     });
@@ -116,13 +117,13 @@ export default function Home() {
                     setTauxPanne(Math.round(tauxPanne / nbTaux * 100) / 100);
                 });
                 get_environnement().then(data => {
-                   let impactCarboneInside = 0;
-                     data.data.forEach(item => {
-                         if (item.impactCarbone != undefined) {
-                             impactCarboneInside += item.impactCarbone;
-                         }
-                     });
-                     setImpactCarbone(impactCarboneInside);
+                    let impactCarboneInside = 0;
+                    data.data.forEach(item => {
+                        if (item.impactCarbone != undefined) {
+                            impactCarboneInside += item.impactCarbone;
+                        }
+                    });
+                    setImpactCarbone(impactCarboneInside);
                 });
             }
         }, [date]);
@@ -130,25 +131,38 @@ export default function Home() {
     return (
         <div style={styles.columns}>
             <div style={styles.row}>
-                <Square icon={"/euro.svg"} title="Achat"
-                        text="Nombre de ticket total vendu : "
-                        color="rgba(61,212,71,35%)" titleColor="rgb(61,212,71)" data={nbTotalVendu}/>
-                <Square icon={"/stats.svg"} title="Commercial"
-                        text="Recette global :"
-                        color="rgba(229,175,47,20%)" titleColor="rgb(229,175,47)" data={recetteGlobale}/>
-                <Square icon={"/user.svg"} title="Ressources humaines"
-                        text="Taux d'absenteisme moyen :" data={tauxAbsenteisme} titleColor="rgb(199,122,140)" color="rgba(199,122,140,20%)"/>
+                <Link to="/detailPurchase">
+                    <Square icon={"/euro.svg"} title="Achat"
+                            text="Nombre de ticket total vendu : "
+                            color="rgba(61,212,71,35%)" titleColor="rgb(61,212,71)" data={nbTotalVendu}/>
+                </Link>
+                <Link to="/detailsCommercial">
+                    <Square icon={"/stats.svg"} title="Commercial"
+                            text="Recette global :"
+                            color="rgba(229,175,47,20%)" titleColor="rgb(229,175,47)" data={recetteGlobale}/>
+                </Link>
+                <Link to="/detailsHumanRessource">
+                    <Square icon={"/user.svg"} title="Ressources humaines"
+                            text="Taux d'absenteisme moyen :" data={tauxAbsenteisme} titleColor="rgb(199,122,140)"
+                            color="rgba(199,122,140,20%)"/>
+                </Link>
             </div>
             <div style={styles.row}>
-                <Square icon={"/gears.svg"} title="Technique" text="Taux de panne moyen des bus et TEOR"
-                        titleColor="rgb(247,209,136)" color="rgba(247,209,136,20%)" data={tauxPanne}/>
-                <Square icon={"/ticket.svg"} title="Exploitation" text="Nombre total d'accidents:" data={nbAccident}
-                        titleColor="rgb(121,176,224)"
-                        color="rgba(121,176,224,20%)" data="48170"/>
-                <Square icon={"/leaf.svg"} title="Environnement"
-                        text="Impact carbone :"
-                        titleColor="rgb(212,228,150)"
-                        color="rgba(212,228,150,20%)" data={impactCarbone}/>
+                <Link to="/detailTechnical">
+                    <Square icon={"/gears.svg"} title="Technique" text="Taux de panne moyen des bus et TEOR"
+                            titleColor="rgb(247,209,136)" color="rgba(247,209,136,20%)" data={tauxPanne}/>
+                </Link>
+                <Link to="/detailsExploitation">
+                    <Square icon={"/ticket.svg"} title="Exploitation" text="Nombre total d'accidents:" data={nbAccident}
+                            titleColor="rgb(121,176,224)"
+                            color="rgba(121,176,224,20%)" data="48170"/>
+                </Link>
+                <Link to="/detailsEnvironment">
+                    <Square icon={"/leaf.svg"} title="Environnement"
+                            text="Impact carbone :"
+                            titleColor="rgb(212,228,150)"
+                            color="rgba(212,228,150,20%)" data={impactCarbone}/>
+                </Link>
             </div>
         </div>
     );
@@ -158,12 +172,12 @@ const styles = {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        width:"100%",
+        width: "100%",
     },
-    row : {
+    row: {
         display: "flex",
         justifyContent: "center",
-        width:"100%",
+        width: "100%",
         flexDirection: "row",
         flexWrap: "wrap"
     }
