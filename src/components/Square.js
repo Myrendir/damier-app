@@ -32,7 +32,7 @@ const styles = {
         flexDirection: "column",
         alignItems: "center",
         textAlign: "center",
-        padding: 30
+        padding: 30,
     },
     image: {
         width: 50,
