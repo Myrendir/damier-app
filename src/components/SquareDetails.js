@@ -9,7 +9,7 @@ export default function SquareDetails({ title,color, btnColor, icon, data, ...pr
         <p style={{textAlign:"center", fontWeight:"bold", fontSize:"1.2em" }}> {title}</p>
       </div>
       <div style={{textAlign:"center" }}>
-        <img width="30"  class="fit-picture" src={icon} alt={title} />
+        <img width="30"  className="fit-picture" src={icon} alt={title} />
       </div>
       <div height="10%">
         <p style={{textAlign:"center" , height:"100%", fontSize:"1.2em" }} variant="h4"> {data}</p>
@@ -23,7 +23,7 @@ export default function SquareDetails({ title,color, btnColor, icon, data, ...pr
 const styles = {
   box: {
     width: 200,
-    height:"100%",
+    height: 200,
     maxHeight: 215,
     borderRadius: "30px",
     boxShadow: "0px 4px 9px 1px rgba(0,0,0,0.2)",

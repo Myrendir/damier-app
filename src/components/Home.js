@@ -159,7 +159,7 @@ export default function Home() {
                 <Link style={{ textDecoration: 'none' }} to="/detailsExploitation">
                     <Square icon={"/ticket.svg"} title="Exploitation" text="Nombre total d'accidents:" data={nbAccident}
                             titleColor="rgb(121,176,224)"
-                            color="rgba(121,176,224,20%)" data="48170"/>
+                            color="rgba(121,176,224,20%)"/>
                 </Link>
                 <Link style={{ textDecoration: 'none' }} to="/detailsEnvironment">
                     <Square icon={"/leaf.svg"} title="Environnement"
