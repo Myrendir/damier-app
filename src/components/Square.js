@@ -1,9 +1,9 @@
 import React from 'react';
-import './square.css';
 
 export default function Square({color, icon, title, text, titleColor, data, ...props}) {
 
     function MouseOver(event) {
+        event.currentTarget.style.cursor = "pointer";
         event.currentTarget.style.transition = "all 0.5s";
         event.currentTarget.style.transform = "scale(1.1)";
     }

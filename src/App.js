@@ -1,4 +1,3 @@
-import './App.css';
 import Sidebar from "./components/layouts/Sidebar/Sidebar";
 import AppRouter from "./router/AppRouter";
 
