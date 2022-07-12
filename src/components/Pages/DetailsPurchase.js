@@ -19,7 +19,6 @@ export default function DetailsPurchase({color, ...props}) {
 
     useEffect(
         () => {
-            console.log(date)
             if (date != 0) {
                 let newDate = new Date(date);
                 let endDate = getLastDayOfMonth(newDate.getFullYear(), newDate.getMonth());
