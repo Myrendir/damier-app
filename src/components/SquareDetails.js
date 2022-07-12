@@ -3,10 +3,6 @@ import { Button, Modal, Box } from "@mui/material";
 import PropTypes from "prop-types";
 
 export default function SquareDetails({ title,color, btnColor, icon, data, ...props }) {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   return (
     <div style={{...styles.box, backgroundColor: color}} {...props}>
       <div height="10%">
@@ -19,25 +15,7 @@ export default function SquareDetails({ title,color, btnColor, icon, data, ...pr
         <p style={{textAlign:"center" , height:"100%", fontSize:"1.2em" }} variant="h4"> {data}</p>
       </div>
       <div style={{textAlign:"center" }}>
-      <Button style={{ borderRadius: 50 ,color:"white", fontSize:"0.9em", background: btnColor, height:"20px"}} onClick={handleOpen}>
-        En savoir plus
-      </Button>
       </div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={styles.modal}>
-          <p id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </p>
-          <p id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </p>
-          </Box>
-      </Modal>
     </div>
   );
 }
