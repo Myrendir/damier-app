@@ -1,13 +1,12 @@
 import './App.css';
 import Sidebar from "./components/layouts/Sidebar/Sidebar";
-import Home from "./components/Home";
-import {useStore} from "react-context-hook";
+import AppRouter from "./router/AppRouter";
 
 function App() {
     return (
         <div className="App" style={styles.row}>
             <Sidebar/>
-            <Home/>
+            <AppRouter/>
         </div>
     );
 }
