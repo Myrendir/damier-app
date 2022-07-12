@@ -8,7 +8,7 @@ export default function Home() {
 
     return (
         <div style={styles.columns}>
-            <div style={styles.row}>
+            <div style={{...styles.row, marginTop:0}}>
                 <Square icon={"/euro.svg"} title="Achat"
                         text="Estimation de la variation des recettes par comparaison à 2020: "
                         color="rgba(61,212,71,35%)" titleColor="rgb(61,212,71)" data="Environ +3.7M en cumulé à fin aout"/>
@@ -18,7 +18,7 @@ export default function Home() {
                 <Square icon={"/user.svg"} title="Ressources humaines"
                         text="Êtres en conformité avec la réglementation :" titleColor="rgb(199,122,140)" color="rgba(199,122,140,20%)"/>
             </div>
-            <div style={styles.row}>
+            <div style={{...styles.row, marginBottom:0}}>
                 <Square icon={"/gears.svg"} title="Technique" text="Voyages lignes régulières en 2021"
                         titleColor="rgb(247,209,136)" color="rgba(247,209,136,20%)" data="26821899"/>
                 <Square icon={"/ticket.svg"} title="Exploitation" text="Tcar - Kilomètres métro haut le pied en 2021:"
@@ -34,10 +34,8 @@ export default function Home() {
 }
 const styles = {
     columns: {
-        display: "flex",
+        flex:1,
         flexDirection: "column",
-        justifyContent: "center",
-        width:"100%",
     },
     row : {
         display: "flex",
