@@ -1,13 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
 import Sidebar from "./components/layouts/Sidebar/Sidebar";
-import Home from "./components/Home";
+import AppRouter from "./router/AppRouter";
 
 function App() {
     return (
         <div className="App" style={styles.row}>
-            <Home/>
             <Sidebar/>
+            <AppRouter/>
         </div>
     );
 }
@@ -15,7 +13,7 @@ function App() {
 export default App;
 
 const styles = {
-    row : {
+    row: {
         display: "flex",
         flexDirection: "row",
         height: "100vh",
