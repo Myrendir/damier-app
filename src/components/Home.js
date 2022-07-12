@@ -131,33 +131,33 @@ export default function Home() {
     return (
         <div style={styles.columns}>
             <div style={styles.row}>
-                <Link to="/detailPurchase">
+                <Link style={{ textDecoration: 'none' }} to="/detailPurchase">
                     <Square icon={"/euro.svg"} title="Achat"
                             text="Nombre de ticket total vendu : "
                             color="rgba(61,212,71,35%)" titleColor="rgb(61,212,71)" data={nbTotalVendu}/>
                 </Link>
-                <Link to="/detailsCommercial">
+                <Link style={{ textDecoration: 'none' }} to="/detailsCommercial">
                     <Square icon={"/stats.svg"} title="Commercial"
                             text="Recette global :"
                             color="rgba(229,175,47,20%)" titleColor="rgb(229,175,47)" data={recetteGlobale}/>
                 </Link>
-                <Link to="/detailsHumanRessource">
+                <Link style={{ textDecoration: 'none' }} to="/detailsHumanRessource">
                     <Square icon={"/user.svg"} title="Ressources humaines"
                             text="Taux d'absenteisme moyen :" data={tauxAbsenteisme} titleColor="rgb(199,122,140)"
                             color="rgba(199,122,140,20%)"/>
                 </Link>
             </div>
             <div style={styles.row}>
-                <Link to="/detailTechnical">
+                <Link style={{ textDecoration: 'none' }} to="/detailTechnical">
                     <Square icon={"/gears.svg"} title="Technique" text="Taux de panne moyen des bus et TEOR"
                             titleColor="rgb(247,209,136)" color="rgba(247,209,136,20%)" data={tauxPanne}/>
                 </Link>
-                <Link to="/detailsExploitation">
+                <Link style={{ textDecoration: 'none' }} to="/detailsExploitation">
                     <Square icon={"/ticket.svg"} title="Exploitation" text="Nombre total d'accidents:" data={nbAccident}
                             titleColor="rgb(121,176,224)"
                             color="rgba(121,176,224,20%)" data="48170"/>
                 </Link>
-                <Link to="/detailsEnvironment">
+                <Link style={{ textDecoration: 'none' }} to="/detailsEnvironment">
                     <Square icon={"/leaf.svg"} title="Environnement"
                             text="Impact carbone :"
                             titleColor="rgb(212,228,150)"
