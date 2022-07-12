@@ -8,10 +8,7 @@ export default async function get_human_ressources(endDate) {
                 "Content-Type": "application/json"
             },
             method: 'get',
-            url: HUMAN_RESSOURCES,
-            params: {
-                endDate: endDate
-            }
+            url: endDate === undefined ? HUMAN_RESSOURCES : (HUMAN_RESSOURCES + "/date/" + endDate)
         });
 
         return response.data;

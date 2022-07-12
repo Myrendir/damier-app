@@ -8,10 +8,7 @@ export default async function get_commercial(endDate) {
                 "Content-Type": "application/json"
             },
             method: 'get',
-            url: COMMERCIAL,
-            params: {
-                endDate: endDate
-            }
+            url: endDate === undefined ? COMMERCIAL : (COMMERCIAL + "/date/" + endDate)
         });
 
         return response.data;
