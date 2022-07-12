@@ -18,10 +18,14 @@ export default function Home() {
     const [tauxAbsenteisme, setTauxAbsenteisme] = useState(0);
     const [tauxPanne, setTauxPanne] = useState(0);
     const [impactCarbone, setImpactCarbone] = useState(0);
+    const [color, setColor] = useStore("color",  "#d7d7d7");
 
     function getLastDayOfMonth(year, month) {
         return new Date(year, month + 1, 0);
     }
+    useEffect(() => {
+        setColor("#e7e7e7");
+    },[]);
 
     useEffect(
         () => {

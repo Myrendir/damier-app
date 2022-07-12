@@ -9,6 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const initialValue = {
     date: 0,
     isVue2d: 0,
+    color: "#cccccc"
 };
 const AppWithStore = withStore(App, initialValue);
 root.render(

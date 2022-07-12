@@ -5,8 +5,9 @@ import Datepicker from "../../Datepicker/Datepicker";
 import {useEffect, useState} from "react";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MenuIcon from '@mui/icons-material/Menu';
-export default function Sidebar(props) {
+export default function Sidebar() {
     const [isVue2D, setIsVue2D] = useStore("isVue2D", 0);
+    const [color, setColor] = useStore("color",  "#cccccc");
     const [matches, setMatches] = useState(
         window.matchMedia("(min-width: 500px)").matches
     )
@@ -62,7 +63,8 @@ export default function Sidebar(props) {
                 height: "100vh",
                 display: matches || click ? "block" : "none",
                 position: "fixed",
-                backgroundColor: props.color ? props.color : "lightgrey",
+                boxShadow: "3px -1px 12px 0px rgba(0,0,0,0.75)",
+                backgroundColor: color,
                 justifyContent: "center",
                 textAlign: "center"
             }}>
@@ -86,13 +88,13 @@ export default function Sidebar(props) {
                 </div>
                 <div style={{paddingTop: "8vh"}}>
                     <Datepicker
-                        color={props.color}
                     />
                 </div>
                 <div style={{position:"absolute",width:"100%",bottom:20,textAlign:"center"}}>
                     <p style={{fontSize: 12}}>2D / 3D</p>
                     <Switch
                         color="primary"
+                        value={isVue2D}
                         onChange={e => setIsVue2D(e.target.value)}
                     />
                 </div>
