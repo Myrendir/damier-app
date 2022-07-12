@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Square from "./square";
 import {useStore} from "react-context-hook";
 import get_achat from "../services/achatService";
 import get_commercial from "../services/commercialService";
@@ -7,6 +6,7 @@ import get_exploitation from "../services/exploitationService";
 import get_human_ressources from "../services/humanRessourcesService";
 import get_technical from "../services/technicalService";
 import get_environnement from "../services/qualityEnvironmentService";
+import Square from "./Square";
 
 
 export default function Home() {
