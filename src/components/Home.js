@@ -65,7 +65,7 @@ export default function Home() {
                             tauxAbstent += item.tauxAbsenteisme;
                         }
                     });
-                    setTauxAbsenteisme(tauxAbstent / nbTaux);
+                    setTauxAbsenteisme(Math.round(tauxAbstent / nbTaux * 100) / 100+"%");
                 });
             } else {
                 get_achat().then(data => {
@@ -103,7 +103,7 @@ export default function Home() {
                             tauxAbstent += item.tauxAbsenteisme;
                         }
                     });
-                    setTauxAbsenteisme(tauxAbstent / nbTaux);
+                    setTauxAbsenteisme(Math.round(tauxAbstent / nbTaux * 100) / 100+"%");
                 });
                 get_technical().then(data => {
                     let nbTaux = 0;
@@ -114,7 +114,7 @@ export default function Home() {
                             tauxPanne += item.tauxPannesBusEtTeor;
                         }
                     });
-                    setTauxPanne(Math.round(tauxPanne / nbTaux * 100) / 100);
+                    setTauxPanne(Math.round(tauxPanne / nbTaux * 100) / 100+"%");
                 });
                 get_environnement().then(data => {
                     let impactCarboneInside = 0;
