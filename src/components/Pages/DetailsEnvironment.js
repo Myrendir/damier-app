@@ -71,18 +71,22 @@ export default function DetailsEnvironment({color, ...props}) {
         <div style={styles.columns} {...props}>
             <div style={styles.box}>
                 <SquareDecorator color="#006e37"/>
-                <SquareDetails btnColor="#094F66" title={"Nombre de signalements"}
+                <SquareDetails btnColor="#094F66"
+                               title={"Nombre de signalements"}
                                data={nbSignalementsQualiteEnvironement} color="#f8f8f8" icon={"/leaf.svg"}/>
                 <SquareDecorator color="#0c5b53"/>
             </div>
             <div style={styles.box}>
-                <SquareDetails color="#f8f8f8" btnColor="#094F66" title={"Impact carbone"} data={impactCarbone} icon={"/leaf.svg"}/>
+                <SquareDetails color="#f8f8f8" btnColor="#094F66"
+                               title={"Impact carbone"} data={impactCarbone} icon={"/leaf.svg"}/>
                 <SquareDecorator color="#d4e496"/>
-                <SquareDetails color="#f8f8f8" icon={"/leaf.svg"} title={"Incidents environnementaux"} data={incidentsEnvironnementaux} btnColor="#094F66"/>
+                <SquareDetails color="#f8f8f8" icon={"/leaf.svg"}
+                               title={"Incidents environnementaux"} data={incidentsEnvironnementaux} btnColor="#094F66"/>
             </div>
             <div style={styles.box}>
                 <SquareDecorator color="#029c51"/>
-                <SquareDetails btnColor="#094F66" color="#f8f8f8" title={"Buget environnement"} data={budgetEnvironnement} icon={"/leaf.svg"}/>
+                <SquareDetails btnColor="#094F66" color="#f8f8f8"
+                               title={"Buget environnement"} data={budgetEnvironnement} icon={"/leaf.svg"}/>
                 <SquareDecorator color="#96b996"/>
             </div>
         </div>
