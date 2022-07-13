@@ -5,7 +5,6 @@ import SquareDetails from "../SquareDetails";
 import {useEffect, useState} from "react";
 import {useStore} from "react-context-hook";
 import get_quality_environment from "../../services/qualityEnvironmentService";
-import getLastDayOfMonth from "../../services/utils";
 import NavArrow from "../NavArrow";
 
 export default function DetailsEnvironment({color, ...props}) {
@@ -79,10 +78,10 @@ export default function DetailsEnvironment({color, ...props}) {
     )
     return (
         <NavArrow
-            left={"Commercial"}
-            right={"Environnement"}
+            left={"Technique"}
+            right={"Exploitation"}
             top={"Commercial"}
-            bot={"Commercial"}
+            bot={"Ressources humaines"}
         >
         <div style={styles.columns} {...props}>
             <div style={styles.box}>

@@ -122,10 +122,10 @@ export default function DetailTechnical({ color, ...props }) {
   }, [date]);
   return (
       <NavArrow
-          left={"Commercial"}
-          right={"Environnement"}
-          top={"Commercial"}
-          bot={"Commercial"}
+          left={"Achat"}
+          right={"Commercial"}
+          top={"Environnement"}
+          bot={"Ressources humaines"}
       >
         <div style={styles.columns} {...props}>
           <div style={styles.box}>
