@@ -163,7 +163,8 @@ const styles = {
   columns: {
     flex:1,
     flexDirection: "column",
-    display: "flex"
+    display: "flex",
+    justifyContent: "center",
   },
   box: {
     display: "flex",

@@ -138,18 +138,17 @@ export default function DetailsHumanRessource({ color, ...props }) {
 
 const styles = {
   columns: {
-    display: "flex",
+    flex:1,
     flexDirection: "column",
+    display: "flex",
     justifyContent: "center",
-    width: "100%",
   },
   box: {
     display: "flex",
     justifyContent: "center",
     width: "100%",
     flexDirection: "row",
-    flexWrap: "wrap",
-    height: "100%",
+    flexWrap: "wrap"
   },
 };
 
