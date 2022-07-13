@@ -13,6 +13,12 @@ export default function DetailsPurchase({color, ...props}) {
     const [nbTotalTickets, setNbTotalTickets] = useState(0);
     const [ventePopulaire, setVentePopulaire] = useState("");
 
+    const [sideBarcolor, setColor] = useStore("color",  "");
+
+    useEffect(() => {
+        setColor("#668961");
+    },[]);
+
     function getLastDayOfMonth(year, month) {
         return new Date(year, month + 1, 0);
     }

@@ -12,9 +12,17 @@ export default function DetailsEnvironment({color, ...props}) {
     const [impactCarbone, setImpactCarbone] = useState(0);
     const [incidentsEnvironnementaux, setIncidentsEnvironnementaux] = useState(0);
     const [budgetEnvironnement, setBudgetEnvironnement] = useState(0);
+   
+    const [sideBarcolor, setColor] = useStore("color",  "");
+
+    useEffect(() => {
+        setColor("#668961");
+    },[]);
+
     function getLastDayOfMonth(year, month) {
         return new Date(year, month + 1, 0);
     }
+    
     useEffect(
         () => {
             if (date != 0) {

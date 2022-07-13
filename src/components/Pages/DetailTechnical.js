@@ -6,6 +6,12 @@ import { useStore } from "react-context-hook";
 import get_technical from "../../services/technicalService";
 
 export default function DetailTechnical({ color, ...props }) {
+  const [sideBarcolor, setColor] = useStore("color",  "");
+
+    useEffect(() => {
+        setColor("#ff9300");
+    },[]);
+
   const [date] = useStore("date");
   const [tauxPannesBusEtTeor, setTauxPannesBusEtTeor] = useState(0);
   const [
