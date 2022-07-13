@@ -9,7 +9,7 @@ export default function SquareDecorator({ color, ...props }) {
 const styles = {
   box: {
     width: 200,
-    height:"100%",
+    height:200,
     maxHeight: 215,
     mb:"0.5rem",
     mr:"0.5rem",
