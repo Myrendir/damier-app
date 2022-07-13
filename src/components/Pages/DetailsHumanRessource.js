@@ -93,9 +93,9 @@ export default function DetailsHumanRessource({ color, ...props }) {
   }, [date]);
   return (
       <NavArrow
-          left={"Commercial"}
-          right={"Environnement"}
-          top={"Commercial"}
+          left={"Achat"}
+          right={"Technique"}
+          top={"Environnement"}
           bot={"Commercial"}
       >
         <div style={styles.columns} {...props}>

@@ -78,10 +78,10 @@ export default function DetailsPurchase({color, ...props}) {
     )
     return (
         <NavArrow
-            left={"Commercial"}
-            right={"Environnement"}
-            top={"Commercial"}
-            bot={"Commercial"}
+            left={"Exploitation"}
+            right={"Technique"}
+            top={"Ressources humaines"}
+            bot={"Environnement"}
         >
             <div style={styles.columns} {...props}>
             <div style={styles.box}>

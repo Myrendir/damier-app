@@ -102,10 +102,10 @@ export default function DetailsCommercial({ color, ...props }) {
   }, [date]);
   return (
       <NavArrow
-          left={"Commercial"}
+          left={"Achat"}
           right={"Environnement"}
-          top={"Commercial"}
-          bot={"Commercial"}
+          top={"Exploitation"}
+          bot={"Ressources humaines"}
       >
         <div style={styles.columns} {...props}>
           <div style={styles.box}>
