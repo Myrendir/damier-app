@@ -4,6 +4,7 @@ import SquareDecorator from "../SquareDecorator";
 import SquareDetails from "../SquareDetails";
 import { useStore } from "react-context-hook";
 import get_technical from "../../services/technicalService";
+import NavArrow from "../NavArrow";
 
 export default function DetailTechnical({ color, ...props }) {
   const [date] = useStore("date");
@@ -114,48 +115,55 @@ export default function DetailTechnical({ color, ...props }) {
     }
   }, [date]);
   return (
-    <div style={styles.columns} {...props}>
-      <div style={styles.box}>
-        <SquareDecorator color="#e39147" />
-        <SquareDetails
-          data={tauxPannesBusEtTeor}
-          title="Taux de pannes bus/teor"
-          btnColor="#F1CE86"
-          color="#f8f8f8"
-          icon={"/gears.svg"}
-        />
-        <SquareDecorator color="#ff9300" />
-      </div>
-      <div style={styles.box}>
-        <SquareDetails
-          data={tauxPannesTram}
-          title="Taux de pannes tram"
-          color="#f8f8f8"
-          btnColor="#F1CE86"
-          icon={"/gears.svg"}
-        />
-        <SquareDecorator color="#f1ce86" />
-        <SquareDetails
-          data={consommationTramAuxCentsKms}
-          title="consommation tram km/100"
-          color="#f8f8f8"
-          icon={"/gears.svg"}
-          btnColor="#F1CE86"
-        />
-      </div>
+      <NavArrow
+          left={"Commercial"}
+          right={"Environnement"}
+          top={"Commercial"}
+          bot={"Commercial"}
+      >
+        <div style={styles.columns} {...props}>
+          <div style={styles.box}>
+            <SquareDecorator color="#e39147" />
+            <SquareDetails
+                data={tauxPannesBusEtTeor}
+                title="Taux de pannes bus/teor"
+                btnColor="#F1CE86"
+                color="#f8f8f8"
+                icon={"/gears.svg"}
+            />
+            <SquareDecorator color="#ff9300" />
+          </div>
+          <div style={styles.box}>
+            <SquareDetails
+                data={tauxPannesTram}
+                title="Taux de pannes tram"
+                color="#f8f8f8"
+                btnColor="#F1CE86"
+                icon={"/gears.svg"}
+            />
+            <SquareDecorator color="#f1ce86" />
+            <SquareDetails
+                data={consommationTramAuxCentsKms}
+                title="consommation tram km/100"
+                color="#f8f8f8"
+                icon={"/gears.svg"}
+                btnColor="#F1CE86"
+            />
+          </div>
 
-      <div style={styles.box}>
-        <SquareDecorator color="#edb312" />
-        <SquareDetails
-          data={consommationBusEtTeorAuxCentsKms}
-          title="Consommation bus/Teor km/100"
-          btnColor="#F1CE86"
-          color="#f8f8f8"
-          icon={"/gears.svg"}
-        />
-        <SquareDecorator color="#ea7857" />
-      </div>
-    </div>
+          <div style={styles.box}>
+            <SquareDecorator color="#edb312" />
+            <SquareDetails
+                data={consommationBusEtTeorAuxCentsKms}
+                title="Consommation bus/Teor km/100"
+                btnColor="#F1CE86"
+                color="#f8f8f8"
+                icon={"/gears.svg"}
+            />
+            <SquareDecorator color="#ea7857" />
+          </div>
+        </div>
+      </NavArrow>
   );
 }
 
