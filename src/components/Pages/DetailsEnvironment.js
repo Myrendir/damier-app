@@ -14,7 +14,9 @@ export default function DetailsEnvironment({color, ...props}) {
     const [impactCarbone, setImpactCarbone] = useState(0);
     const [incidentsEnvironnementaux, setIncidentsEnvironnementaux] = useState(0);
     const [budgetEnvironnement, setBudgetEnvironnement] = useState(0);
-
+    function getLastDayOfMonth(year, month) {
+        return new Date(year, month + 1, 0);
+    }
     useEffect(
         () => {
             if (date != 0) {
@@ -33,7 +35,8 @@ export default function DetailsEnvironment({color, ...props}) {
                             impactCarboneInside += item.impactCarbone;
                             incidentsEnvironnementauxInside += item.incidentsEnvironnementaux;
                             budgetEnvironnementInside += item.budgetEnvironnement;
-                        })
+                        });
+
                         setNbSignalementsQualiteEnvironement(nbSignalementsQualiteEnvironementInside);
                         setImpactCarbone(impactCarboneInside);
                         setIncidentsEnvironnementaux(incidentsEnvironnementauxInside);
@@ -54,6 +57,7 @@ export default function DetailsEnvironment({color, ...props}) {
                             incidentsEnvironnementauxInside += item.incidentsEnvironnementaux;
                             budgetEnvironnementInside += item.budgetEnvironnement;
                         })
+
                         setNbSignalementsQualiteEnvironement(nbSignalementsQualiteEnvironementInside);
                         setImpactCarbone(impactCarboneInside);
                         setIncidentsEnvironnementaux(incidentsEnvironnementauxInside);
@@ -72,25 +76,28 @@ export default function DetailsEnvironment({color, ...props}) {
             top={"Commercial"}
             bot={"Commercial"}
         >
-            <div style={styles.columns} {...props}>
-                <div style={styles.box}>
-                    <SquareDecorator color="#006e37"/>
-                    <SquareDetails btnColor="#094F66" title={"Nombre de signalements"}
-                                   data={nbSignalementsQualiteEnvironement} color="#f8f8f8" icon={"/leaf.svg"}/>
-                    <SquareDecorator color="#0c5b53"/>
-                </div>
-                <div style={styles.box}>
-                    <SquareDetails color="#f8f8f8" btnColor="#094F66" title={"Impact carbone"} data={impactCarbone} icon={"/leaf.svg"}/>
-                    <SquareDecorator color="#d4e496"/>
-                    <SquareDetails color="#f8f8f8" icon={"/leaf.svg"} title={"Incidents environnementaux"} data={incidentsEnvironnementaux} btnColor="#094F66"/>
-                </div>
-
-                <div style={styles.box}>
-                    <SquareDecorator color="#029c51"/>
-                    <SquareDetails btnColor="#094F66" color="#f8f8f8" title={"Buget environnement"} data={budgetEnvironnement} icon={"/leaf.svg"}/>
-                    <SquareDecorator color="#96b996"/>
-                </div>
+        <div style={styles.columns} {...props}>
+            <div style={styles.box}>
+                <SquareDecorator color="#006e37"/>
+                <SquareDetails btnColor="#094F66"
+                               title={"Nombre de signalements"}
+                               data={nbSignalementsQualiteEnvironement} color="#f8f8f8" icon={"/leaf.svg"}/>
+                <SquareDecorator color="#0c5b53"/>
             </div>
+            <div style={styles.box}>
+                <SquareDetails color="#f8f8f8" btnColor="#094F66"
+                               title={"Impact carbone"} data={impactCarbone} icon={"/leaf.svg"}/>
+                <SquareDecorator color="#d4e496"/>
+                <SquareDetails color="#f8f8f8" icon={"/leaf.svg"}
+                               title={"Incidents environnementaux"} data={incidentsEnvironnementaux} btnColor="#094F66"/>
+            </div>
+            <div style={styles.box}>
+                <SquareDecorator color="#029c51"/>
+                <SquareDetails btnColor="#094F66" color="#f8f8f8"
+                               title={"Buget environnement"} data={budgetEnvironnement} icon={"/leaf.svg"}/>
+                <SquareDecorator color="#96b996"/>
+            </div>
+         </div>
         </NavArrow>
     );
 }
