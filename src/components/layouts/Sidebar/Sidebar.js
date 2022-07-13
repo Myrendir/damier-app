@@ -5,8 +5,12 @@ import Datepicker from "../../Datepicker/Datepicker";
 import {useEffect, useState} from "react";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MenuIcon from '@mui/icons-material/Menu';
+import {links} from "../../links";
+import {cubeFace} from "../../cube/Cube";
+
+
 export default function Sidebar() {
-    const [isVue2D, setIsVue2D] = useStore("isVue2D", 0);
+    const [isVue2D, setIsVue2D] = useStore("isVue2D", false);
     const [color, setColor] = useStore("color",  "#cccccc");
     const [matches, setMatches] = useState(
         window.matchMedia("(min-width: 500px)").matches
@@ -90,12 +94,23 @@ export default function Sidebar() {
                     <Datepicker
                     />
                 </div>
+                {isVue2D && links.map(({ name, color, icon, dataFace }, index) => (
+                    <div
+                        key={index}
+                        style={{ cursor: "pointer", margin:10 }}
+                        onClick={() => cubeFace(dataFace)}
+                    >
+                        {icon}
+                    </div>
+                ))}
                 <div style={{position:"absolute",width:"100%",bottom:20,textAlign:"center"}}>
                     <p style={{fontSize: 12}}>2D / 3D</p>
                     <Switch
                         color="primary"
                         value={isVue2D}
-                        onChange={e => setIsVue2D(e.target.value)}
+                        onClick={() => {
+                            setIsVue2D(!isVue2D);
+                        }}
                     />
                 </div>
             </div>
