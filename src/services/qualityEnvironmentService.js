@@ -8,10 +8,7 @@ export default async function get_quality_environment(endDate) {
                 "Content-Type": "application/json"
             },
             method: 'get',
-            url: QUALITY_ENVIRONMENT,
-            params: {
-                endDate: endDate
-            }
+            url: endDate === undefined ? QUALITY_ENVIRONMENT : (QUALITY_ENVIRONMENT + "/date/" + endDate)
         });
 
         return response.data;

@@ -8,10 +8,7 @@ export default async function get_achat(endDate) {
                 "Content-Type": "application/json"
             },
             method: 'get',
-            url: ACHAT,
-            params: {
-                endDate: endDate
-            }
+            url: endDate === undefined ? ACHAT : (ACHAT + "/date/" + endDate),
         });
         return response.data;
     } catch (error) {

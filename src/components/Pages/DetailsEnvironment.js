@@ -5,7 +5,6 @@ import SquareDetails from "../SquareDetails";
 import {useEffect, useState} from "react";
 import {useStore} from "react-context-hook";
 import get_quality_environment from "../../services/qualityEnvironmentService";
-import getLastDayOfMonth from "../../services/utils";
 
 export default function DetailsEnvironment({color, ...props}) {
     const [date] = useStore("date");
@@ -13,7 +12,9 @@ export default function DetailsEnvironment({color, ...props}) {
     const [impactCarbone, setImpactCarbone] = useState(0);
     const [incidentsEnvironnementaux, setIncidentsEnvironnementaux] = useState(0);
     const [budgetEnvironnement, setBudgetEnvironnement] = useState(0);
-
+    function getLastDayOfMonth(year, month) {
+        return new Date(year, month + 1, 0);
+    }
     useEffect(
         () => {
             if (date != 0) {
@@ -32,7 +33,8 @@ export default function DetailsEnvironment({color, ...props}) {
                             impactCarboneInside += item.impactCarbone;
                             incidentsEnvironnementauxInside += item.incidentsEnvironnementaux;
                             budgetEnvironnementInside += item.budgetEnvironnement;
-                        })
+                        });
+
                         setNbSignalementsQualiteEnvironement(nbSignalementsQualiteEnvironementInside);
                         setImpactCarbone(impactCarboneInside);
                         setIncidentsEnvironnementaux(incidentsEnvironnementauxInside);
@@ -53,6 +55,7 @@ export default function DetailsEnvironment({color, ...props}) {
                             incidentsEnvironnementauxInside += item.incidentsEnvironnementaux;
                             budgetEnvironnementInside += item.budgetEnvironnement;
                         })
+
                         setNbSignalementsQualiteEnvironement(nbSignalementsQualiteEnvironementInside);
                         setImpactCarbone(impactCarboneInside);
                         setIncidentsEnvironnementaux(incidentsEnvironnementauxInside);
@@ -77,7 +80,6 @@ export default function DetailsEnvironment({color, ...props}) {
                 <SquareDecorator color="#d4e496"/>
                 <SquareDetails color="#f8f8f8" icon={"/leaf.svg"} title={"Incidents environnementaux"} data={incidentsEnvironnementaux} btnColor="#094F66"/>
             </div>
-
             <div style={styles.box}>
                 <SquareDecorator color="#029c51"/>
                 <SquareDetails btnColor="#094F66" color="#f8f8f8" title={"Buget environnement"} data={budgetEnvironnement} icon={"/leaf.svg"}/>

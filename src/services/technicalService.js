@@ -8,10 +8,7 @@ export default async function get_technical(endDate) {
                 "Content-Type": "application/json"
             },
             method: 'get',
-            url: TECHNICAL,
-            params: {
-                endDate: endDate
-            }
+            url: endDate === undefined ? TECHNICAL : (TECHNICAL + "/date/" + endDate)
         });
 
         return response.data;
