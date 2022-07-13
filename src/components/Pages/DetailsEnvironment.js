@@ -5,6 +5,8 @@ import SquareDetails from "../SquareDetails";
 import {useEffect, useState} from "react";
 import {useStore} from "react-context-hook";
 import get_quality_environment from "../../services/qualityEnvironmentService";
+import getLastDayOfMonth from "../../services/utils";
+import NavArrow from "../NavArrow";
 
 export default function DetailsEnvironment({color, ...props}) {
     const [date] = useStore("date");
@@ -68,6 +70,12 @@ export default function DetailsEnvironment({color, ...props}) {
         [date]
     )
     return (
+        <NavArrow
+            left={"Commercial"}
+            right={"Environnement"}
+            top={"Commercial"}
+            bot={"Commercial"}
+        >
         <div style={styles.columns} {...props}>
             <div style={styles.box}>
                 <SquareDecorator color="#006e37"/>
@@ -89,7 +97,8 @@ export default function DetailsEnvironment({color, ...props}) {
                                title={"Buget environnement"} data={budgetEnvironnement} icon={"/leaf.svg"}/>
                 <SquareDecorator color="#96b996"/>
             </div>
-        </div>
+         </div>
+        </NavArrow>
     );
 }
 

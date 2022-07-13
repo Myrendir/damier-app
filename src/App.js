@@ -25,6 +25,6 @@ const styles = {
     row: {
         display: "flex",
         flexDirection: "row",
-        height: "100vh",
+        flex:1
     }
 }

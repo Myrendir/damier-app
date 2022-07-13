@@ -4,6 +4,7 @@ import SquareDecorator from "../SquareDecorator";
 import SquareDetails from "../SquareDetails";
 import { useStore } from "react-context-hook";
 import get_commercial from "../../services/commercialService";
+import NavArrow from "../NavArrow";
 
 export default function DetailsCommercial({ color, ...props }) {
   const [date] = useStore("date");
@@ -100,48 +101,55 @@ export default function DetailsCommercial({ color, ...props }) {
     }
   }, [date]);
   return (
-    <div style={styles.columns} {...props}>
-      <div style={styles.box}>
-        <SquareDecorator color="#81450a" />
-        <SquareDetails
-          data={recetteGlobale}
-          title="Moyenne recette globale"
-          btnColor="#B66B13"
-          color="#f8f8f8"
-          icon={"/stats.svg"}
-        />
-        <SquareDecorator color="#b66b13" />
-      </div>
-      <div style={styles.box}>
-        <SquareDetails
-          data={nbNouveauxAbonnements}
-          title="Moyenne d'abonnements"
-          color="#f8f8f8"
-          btnColor="#B66B13"
-          icon={"/stats.svg"}
-        />
-        <SquareDecorator color="#fedc63" />
-        <SquareDetails
-          data={nbNouveauxPartenaires}
-          title="Moyenne de nouveaux partenaires"
-          color="#f8f8f8"
-          icon={"/stats.svg"}
-          btnColor="#B66B13"
-        />
-      </div>
+      <NavArrow
+          left={"Commercial"}
+          right={"Environnement"}
+          top={"Commercial"}
+          bot={"Commercial"}
+      >
+        <div style={styles.columns} {...props}>
+          <div style={styles.box}>
+            <SquareDecorator color="#81450a" />
+            <SquareDetails
+                data={recetteGlobale}
+                title="Moyenne recette globale"
+                btnColor="#B66B13"
+                color="#f8f8f8"
+                icon={"/stats.svg"}
+            />
+            <SquareDecorator color="#b66b13" />
+          </div>
+          <div style={styles.box}>
+            <SquareDetails
+                data={nbNouveauxAbonnements}
+                title="Moyenne d'abonnements"
+                color="#f8f8f8"
+                btnColor="#B66B13"
+                icon={"/stats.svg"}
+            />
+            <SquareDecorator color="#fedc63" />
+            <SquareDetails
+                data={nbNouveauxPartenaires}
+                title="Moyenne de nouveaux partenaires"
+                color="#f8f8f8"
+                icon={"/stats.svg"}
+                btnColor="#B66B13"
+            />
+          </div>
 
-      <div style={styles.box}>
-        <SquareDecorator color="#e5af2f" />
-        <SquareDetails
-          data={nbReclamations}
-          title="Moyenne de réclamations"
-          btnColor="#B66B13"
-          color="#f8f8f8"
-          icon={"/stats.svg"}
-        />
-        <SquareDecorator color="#fbce43" />
-      </div>
-    </div>
+          <div style={styles.box}>
+            <SquareDecorator color="#e5af2f" />
+            <SquareDetails
+                data={nbReclamations}
+                title="Moyenne de réclamations"
+                btnColor="#B66B13"
+                color="#f8f8f8"
+                icon={"/stats.svg"}
+            />
+            <SquareDecorator color="#fbce43" />
+          </div>
+        </div>
+      </NavArrow>
   );
 }
 

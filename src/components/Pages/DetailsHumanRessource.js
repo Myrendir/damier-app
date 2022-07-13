@@ -5,6 +5,7 @@ import SquareDetails from "../SquareDetails";
 import { useStore } from "react-context-hook";
 
 import get_human_ressources from "../../services/humanRessourcesService";
+import NavArrow from "../NavArrow";
 
 export default function DetailsHumanRessource({ color, ...props }) {
   const [date] = useStore("date");
@@ -91,48 +92,55 @@ export default function DetailsHumanRessource({ color, ...props }) {
     }
   }, [date]);
   return (
-    <div style={styles.columns} {...props}>
-      <div style={styles.box}>
-        <SquareDecorator color="#dab6c2" />
-        <SquareDetails
-          data={tauxAbsenteisme}
-          title="Taux d'absentéisme"
-          btnColor="#094f66"
-          color="#f8f8f8"
-          icon={"/user.svg"}
-        />
-        <SquareDecorator color="#c77a8c" />
-      </div>
-      <div style={styles.box}>
-        <SquareDetails
-          data={tauxGreve}
-          color="#f8f8f8"
-          title="Taux de grève"
-          btnColor="#094f66"
-          icon={"/user.svg"}
-        />
-        <SquareDecorator color="#988ab2" />
-        <SquareDetails
-          color="#f8f8f8"
-          data={tauxRecrutement}
-          title="Taux de recrutement"
-          icon={"/user.svg"}
-          btnColor="#094f66"
-        />
-      </div>
+      <NavArrow
+          left={"Commercial"}
+          right={"Environnement"}
+          top={"Commercial"}
+          bot={"Commercial"}
+      >
+        <div style={styles.columns} {...props}>
+          <div style={styles.box}>
+            <SquareDecorator color="#dab6c2" />
+            <SquareDetails
+                data={tauxAbsenteisme}
+                title="Taux d'absentéisme"
+                btnColor="#094f66"
+                color="#f8f8f8"
+                icon={"/user.svg"}
+            />
+            <SquareDecorator color="#c77a8c" />
+          </div>
+          <div style={styles.box}>
+            <SquareDetails
+                data={tauxGreve}
+                color="#f8f8f8"
+                title="Taux de grève"
+                btnColor="#094f66"
+                icon={"/user.svg"}
+            />
+            <SquareDecorator color="#988ab2" />
+            <SquareDetails
+                color="#f8f8f8"
+                data={tauxRecrutement}
+                title="Taux de recrutement"
+                icon={"/user.svg"}
+                btnColor="#094f66"
+            />
+          </div>
 
-      <div style={styles.box}>
-        <SquareDecorator color="#745582" />
-        <SquareDetails
-          btnColor="#094f66"
-          data={tauxTurnOver}
-          title="Taux de turnOver"
-          color="#f8f8f8"
-          icon={"/user.svg"}
-        />
-        <SquareDecorator color="#dab6c2" />
-      </div>
-    </div>
+          <div style={styles.box}>
+            <SquareDecorator color="#745582" />
+            <SquareDetails
+                btnColor="#094f66"
+                data={tauxTurnOver}
+                title="Taux de turnOver"
+                color="#f8f8f8"
+                icon={"/user.svg"}
+            />
+            <SquareDecorator color="#dab6c2" />
+          </div>
+        </div>
+      </NavArrow>
   );
 }
 

@@ -5,6 +5,7 @@ import SquareDetails from "../SquareDetails";
 import {useEffect, useState} from "react";
 import {useStore} from "react-context-hook";
 import get_achat from "../../services/achatService";
+import NavArrow from "../NavArrow";
 
 export default function DetailsPurchase({color, ...props}) {
     const [date] = useStore("date");
@@ -76,7 +77,13 @@ export default function DetailsPurchase({color, ...props}) {
         [date]
     )
     return (
-        <div style={styles.columns} {...props}>
+        <NavArrow
+            left={"Commercial"}
+            right={"Environnement"}
+            top={"Commercial"}
+            bot={"Commercial"}
+        >
+            <div style={styles.columns} {...props}>
             <div style={styles.box}>
                 <SquareDecorator color="#acc1b8"/>
                 <SquareDetails btnColor="#094f66" title={"Tickets vendus"} data={nbTotalTickets} color="#f8f8f8"
@@ -97,6 +104,7 @@ export default function DetailsPurchase({color, ...props}) {
                 <SquareDecorator color="#abc69d"/>
             </div>
         </div>
+        </NavArrow>
     );
 }
 
