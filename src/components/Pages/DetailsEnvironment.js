@@ -33,7 +33,8 @@ export default function DetailsEnvironment({color, ...props}) {
                             impactCarboneInside += item.impactCarbone;
                             incidentsEnvironnementauxInside += item.incidentsEnvironnementaux;
                             budgetEnvironnementInside += item.budgetEnvironnement;
-                        })
+                        });
+
                         setNbSignalementsQualiteEnvironement(nbSignalementsQualiteEnvironementInside);
                         setImpactCarbone(impactCarboneInside);
                         setIncidentsEnvironnementaux(incidentsEnvironnementauxInside);
@@ -54,6 +55,7 @@ export default function DetailsEnvironment({color, ...props}) {
                             incidentsEnvironnementauxInside += item.incidentsEnvironnementaux;
                             budgetEnvironnementInside += item.budgetEnvironnement;
                         })
+
                         setNbSignalementsQualiteEnvironement(nbSignalementsQualiteEnvironementInside);
                         setImpactCarbone(impactCarboneInside);
                         setIncidentsEnvironnementaux(incidentsEnvironnementauxInside);
@@ -78,7 +80,6 @@ export default function DetailsEnvironment({color, ...props}) {
                 <SquareDecorator color="#d4e496"/>
                 <SquareDetails color="#f8f8f8" icon={"/leaf.svg"} title={"Incidents environnementaux"} data={incidentsEnvironnementaux} btnColor="#094F66"/>
             </div>
-
             <div style={styles.box}>
                 <SquareDecorator color="#029c51"/>
                 <SquareDetails btnColor="#094F66" color="#f8f8f8" title={"Buget environnement"} data={budgetEnvironnement} icon={"/leaf.svg"}/>

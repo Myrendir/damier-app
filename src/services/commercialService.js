@@ -10,7 +10,6 @@ export default async function get_commercial(endDate) {
             method: 'get',
             url: endDate === undefined ? COMMERCIAL : (COMMERCIAL + "/date/" + endDate)
         });
-
         return response.data;
     } catch (error) {
         console.error(error);
