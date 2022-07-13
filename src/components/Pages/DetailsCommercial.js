@@ -12,7 +12,11 @@ export default function DetailsCommercial({ color, ...props }) {
   const [nbNouveauxAbonnements, setNbNouveauxAbonnements] = useState(0);
   const [nbNouveauxPartenaires, setNbNouveauxPartenaires] = useState(0);
   const [nbReclamations, setNbReclamations] = useState(0);
+const [sideBarcolor, setColor] = useStore("color",  "");
 
+useEffect(() => {
+    setColor("#fedc63");
+},[]);
   function getLastDayOfMonth(year, month) {
     return new Date(year, month + 1, 0);
   }

@@ -14,6 +14,12 @@ export default function DetailsHumanRessource({ color, ...props }) {
   const [tauxRecrutement, setTauxRecrutement] = useState(0);
   const [tauxTurnOver, setTauxTurnOver] = useState(0);
 
+  const [sideBarcolor, setColor] = useStore("color",  "");
+
+    useEffect(() => {
+        setColor("#dab6c2");
+    },[]);
+
   function getLastDayOfMonth(year, month) {
     return new Date(year, month + 1, 0);
   }

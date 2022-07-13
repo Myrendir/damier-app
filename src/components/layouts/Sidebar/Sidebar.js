@@ -88,7 +88,7 @@ export default function Sidebar() {
                     )
                 }
                 <div style={{paddingTop: !matches ? 30 : 20}}>
-                    <h3>Bonjour Toto</h3>
+                
                 </div>
                 <div style={{paddingTop: "8vh"}}>
                     <Datepicker
